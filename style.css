@@ -9,7 +9,7 @@ html, body {
   color: #2e3a3f;
 }
 
-/* ========== BODY – SOFT GRADIENT (NO STRAIN) ========== */
+/* ========== BODY – SOFT, EYE-COMFORT GRADIENT ========== */
 body {
   background: linear-gradient(
     135deg,
@@ -18,31 +18,38 @@ body {
     #eef3f5    /* off-white */
   );
   min-height: 100vh;
-  padding-top: 0px;
 }
 
-/* ========== NAVBAR – MUTED TEAL ========== */
+/* ========== NAVBAR – CLEAN, NO TOP GAP ========== */
 .navbar {
   background: linear-gradient(
     135deg,
     #2f5d62,   /* calm teal */
     #3a6f73
   );
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+
+  /* Shadow ONLY below navbar (no fake space above) */
+  box-shadow: 0 6px 10px -6px rgba(0, 0, 0, 0.25);
 }
 
+/* Navbar text */
 .navbar-brand,
 .nav-link {
   color: #f1f5f7 !important;
   font-weight: 500;
 }
 
-.nav-link:hover {
-  background-color: rgba(255, 255, 255, 0.12);
+/* Navbar hover */
+.nav-link {
+  transition: background-color 0.3s ease;
   border-radius: 6px;
 }
 
-/* ========== HEADINGS – SOFT CONTRAST ========== */
+.nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+/* ========== MAIN HEADING ========== */
 h2 {
   color: #2f5d62;
   font-weight: 600;
@@ -55,8 +62,7 @@ h2 {
   background-color: #ffffff;
   border-radius: 14px;
   padding: 2rem;
-  box-shadow:
-    0 8px 20px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
   transition: transform 0.25s ease;
 }
 
@@ -126,6 +132,7 @@ h2 {
   h2 {
     font-size: 1.9rem;
   }
+
   .form-card,
   .result-box {
     padding: 1.4rem;
