@@ -27,10 +27,10 @@ CORS(app)
 
 # Load your trained ROC prediction model
 try:
-    model = joblib.load(os.path.join(basedir, "roc_model.pkl")) # Ensure model path is correct relative to app.py
-    print("Model 'roc_model.pkl' loaded successfully.")
+    model = joblib.load(os.path.join(basedir, "roc_model3.pkl")) # Ensure model path is correct relative to app.py
+    print("Model 'roc_model3.pkl' loaded successfully.")
 except FileNotFoundError:
-    print("Error: 'roc_model.pkl' not found. Make sure the model file is in the same directory as app.py.")
+    print("Error: 'roc_model3.pkl' not found. Make sure the model file is in the same directory as app.py.")
     model = None
 except Exception as e:
     print(f"Error loading model: {e}")
