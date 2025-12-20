@@ -2,102 +2,66 @@
 html, body {
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
   width: 100%;
   height: 100%;
   font-family: "Inter", sans-serif;
+  background-color: #f4f7f8;
+  color: #2e3a3f;
 }
 
-/* ========== BODY – GUNMETAL / STEEL METALLIC ========== */
+/* ========== BODY – SOFT GRADIENT (NO STRAIN) ========== */
 body {
   background: linear-gradient(
     135deg,
-    #0f2027,   /* gunmetal */
-    #203a43,   /* steel blue */
-    #2c5364,   /* titanium */
-    #1c1c1c    /* dark chrome */
+    #e8f1f2,   /* very light teal */
+    #dbe7ea,   /* soft blue-gray */
+    #eef3f5    /* off-white */
   );
-  background-size: 400% 400%;
-  animation: metallicFlow 12s ease infinite;
   min-height: 100vh;
   padding-top: 70px;
 }
 
-@keyframes metallicFlow {
-  0%   { background-position: 0% 50%; }
-  50%  { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-/* ========== NAVBAR – COPPER ↔ GOLD METALLIC ========== */
+/* ========== NAVBAR – MUTED TEAL ========== */
 .navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1030;
   background: linear-gradient(
     135deg,
-    #7c3f00,  /* brushed copper */
-    #b87333,  /* copper */
-    #d4af37,  /* gold */
-    #8a6f2f   /* antique gold */
+    #2f5d62,   /* calm teal */
+    #3a6f73
   );
-  background-size: 400% 400%;
-  animation: metallicNavbar 10s ease infinite;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
-}
-
-@keyframes metallicNavbar {
-  0%   { background-position: 0% 50%; }
-  50%  { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
 .navbar-brand,
 .nav-link {
-  color: #f5f5f5 !important;
+  color: #f1f5f7 !important;
   font-weight: 500;
 }
 
-/* ========== NAV LINK HOVER – POLISHED STEEL ========== */
-.nav-link {
-  transition: all 0.4s ease;
-  border-radius: 8px;
-  padding: 0.5rem 1rem;
-}
-
 .nav-link:hover {
-  background: linear-gradient(
-    270deg,
-    #cfd9df,
-    #e2ebf0,
-    #cfd9df
-  );
-  color: #111 !important;
-  box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.12);
+  border-radius: 6px;
 }
 
-/* ========== CARD / RESULT – FROSTED SILVER ========== */
+/* ========== HEADINGS – SOFT CONTRAST ========== */
+h2 {
+  color: #2f5d62;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+}
+
+/* ========== CARD – SOFT WHITE PANEL ========== */
 .form-card,
 .result-box {
-  background: linear-gradient(
-    135deg,
-    #f5f7fa,
-    #e4e7eb,
-    #ffffff
-  );
+  background-color: #ffffff;
   border-radius: 14px;
   padding: 2rem;
   box-shadow:
-    0 10px 25px rgba(0, 0, 0, 0.25),
-    inset 0 1px 1px rgba(255, 255, 255, 0.8);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+    0 8px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.25s ease;
 }
 
 .form-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.35);
+  transform: translateY(-2px);
 }
 
 .result-box {
@@ -105,62 +69,65 @@ body {
   margin-top: 2rem;
 }
 
-/* ========== HEADINGS – CHROME METALLIC TEXT ========== */
-h2 {
-  background: linear-gradient(
-    to right,
-    #b0bec5,
-    #eceff1,
-    #90a4ae,
-    #cfd8dc
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-}
-
-/* ========== FORM LABELS & INPUTS ========== */
+/* ========== FORM LABELS ========== */
 .form-label {
   font-weight: 500;
-  color: #2b2b2b;
+  color: #3a4a4f;
 }
 
-.form-control {
+/* ========== INPUT FIELDS – LOW STRAIN ========== */
+.form-control,
+.form-select {
   border-radius: 8px;
-  padding: 0.75rem 1rem;
-  background-color: #ffffff;
-  color: #000;
+  padding: 0.65rem 0.9rem;
+  background-color: #f9fbfc;
+  border: 1px solid #d0dadd;
+  color: #2e3a3f;
 }
 
-/* ========== BUTTON – ELECTRIC STEEL ========== */
+.form-control:focus,
+.form-select:focus {
+  border-color: #3a6f73;
+  box-shadow: 0 0 0 0.15rem rgba(58, 111, 115, 0.25);
+}
+
+/* ========== BUTTON – SOFT GREEN ACTION ========== */
 .predict-btn {
   background: linear-gradient(
     135deg,
-    #1f4037,
-    #99f2c8
+    #5fa8a3,
+    #7fc8c3
   );
   border: none;
   border-radius: 8px;
   padding: 0.75rem 1.5rem;
   font-weight: 600;
-  color: #0b1f17;
+  color: #0f2f2e;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .predict-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.18);
+}
+
+/* ========== RESULT TEXT ========== */
+.result-box h4 {
+  color: #2f7d6d;
+  font-weight: 600;
+}
+
+.result-box p {
+  color: #344b50;
 }
 
 /* ========== RESPONSIVE ========== */
 @media (max-width: 768px) {
   h2 {
-    font-size: 2rem;
+    font-size: 1.9rem;
   }
   .form-card,
   .result-box {
-    padding: 1.5rem;
+    padding: 1.4rem;
   }
 }
