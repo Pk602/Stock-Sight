@@ -15,7 +15,7 @@ form.addEventListener('submit', async (e) => {
 
   try {
     // Make POST request to Flask backend
-    const response = await fetch('http://localhost:5000/predict', {
+    const response = await fetch('https://stock-sight-1-d4b2.onrender.com/predict', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data)
