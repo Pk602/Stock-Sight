@@ -1,153 +1,166 @@
+/* ========== GLOBAL RESET ========== */
 html, body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
   width: 100%;
   height: 100%;
+  font-family: "Inter", sans-serif;
 }
 
+/* ========== BODY – GUNMETAL / STEEL METALLIC ========== */
 body {
-  background: linear-gradient(135deg, #9202f8, #4c0b89, #7902ce, #9370db);
+  background: linear-gradient(
+    135deg,
+    #0f2027,   /* gunmetal */
+    #203a43,   /* steel blue */
+    #2c5364,   /* titanium */
+    #1c1c1c    /* dark chrome */
+  );
   background-size: 400% 400%;
-  animation: metallicFlow 10s ease infinite;
+  animation: metallicFlow 12s ease infinite;
   min-height: 100vh;
   padding-top: 70px;
-  font-family: "Inter", sans-serif;
-  position: relative;
-  margin-top: -1px;
 }
 
 @keyframes metallicFlow {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
 
-/* ========== NAVBAR ========== */
+/* ========== NAVBAR – COPPER ↔ GOLD METALLIC ========== */
 .navbar {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1030;
-  background: linear-gradient(135deg, #800000, #8a2be2, #a52a2a, #4b0082);
+  background: linear-gradient(
+    135deg,
+    #7c3f00,  /* brushed copper */
+    #b87333,  /* copper */
+    #d4af37,  /* gold */
+    #8a6f2f   /* antique gold */
+  );
   background-size: 400% 400%;
-  animation: metallicMaroonPurple 10s ease infinite;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  animation: metallicNavbar 10s ease infinite;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
 }
 
-@keyframes metallicMaroonPurple {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
+@keyframes metallicNavbar {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
 
-.navbar-brand, .nav-link {
-  color: #ffffff !important;
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+.navbar-brand,
+.nav-link {
+  color: #f5f5f5 !important;
+  font-weight: 500;
 }
 
+/* ========== NAV LINK HOVER – POLISHED STEEL ========== */
 .nav-link {
-  transition: background 0.5s ease, color 0.5s ease;
-  padding: 0.5rem 1rem;
+  transition: all 0.4s ease;
   border-radius: 8px;
+  padding: 0.5rem 1rem;
 }
 
 .nav-link:hover {
-  background: linear-gradient(270deg, #800000, #a020f0, #b03060, #4b0082);
-  background-size: 400% 400%;
-  animation: maroonPurpleHover 4s ease infinite;
-  color: #ffffff !important;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
-  border-radius: 8px;
+  background: linear-gradient(
+    270deg,
+    #cfd9df,
+    #e2ebf0,
+    #cfd9df
+  );
+  color: #111 !important;
+  box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.6);
 }
 
-@keyframes maroonPurpleHover {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-/* ========== CARD + FORM ========== */
-.form-card, .result-box {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border-radius: 12px;
-  overflow: hidden;
-  position: relative;
-  z-index: 1;
-  background: linear-gradient(135deg, #f8f8f8, #ffffff, #f0f0f0, #ffffff);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+/* ========== CARD / RESULT – FROSTED SILVER ========== */
+.form-card,
+.result-box {
+  background: linear-gradient(
+    135deg,
+    #f5f7fa,
+    #e4e7eb,
+    #ffffff
+  );
+  border-radius: 14px;
   padding: 2rem;
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.25),
+    inset 0 1px 1px rgba(255, 255, 255, 0.8);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .form-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.35);
 }
 
-/* ========== BUTTON ========== */
-.predict-btn {
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  border-radius: 8px;
-  font-weight: 600;
-  padding: 0.75rem 1.5rem;
-  background-color: #0d6efd;
-  border-color: #0d6efd;
-}
-
-.predict-btn:hover {
-  background-color: #0b5ed7;
-  transform: translateY(-2px);
-}
-
-/* ========== RESULT BOX ========== */
 .result-box {
   display: none;
   margin-top: 2rem;
 }
 
-/* ========== HEADINGS ========== */
+/* ========== HEADINGS – CHROME METALLIC TEXT ========== */
 h2 {
-  background: linear-gradient(to right, #80cbc4, #b2dfdb, #80cbc4, #4db6ac);
+  background: linear-gradient(
+    to right,
+    #b0bec5,
+    #eceff1,
+    #90a4ae,
+    #cfd8dc
+  );
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  color: transparent;
-  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
-  font-weight: bold;
+  font-weight: 700;
+  letter-spacing: 0.5px;
 }
 
-/* ========== FORM LABELS ========== */
+/* ========== FORM LABELS & INPUTS ========== */
 .form-label {
   font-weight: 500;
-  color: #343a40;
-  text-shadow: none;
+  color: #2b2b2b;
 }
 
-/* ========== FORM FIELDS ========== */
 .form-control {
   border-radius: 8px;
   padding: 0.75rem 1rem;
-  background-image: none;
   background-color: #ffffff;
-  color: #000000;
-  text-shadow: none;
+  color: #000;
+}
+
+/* ========== BUTTON – ELECTRIC STEEL ========== */
+.predict-btn {
+  background: linear-gradient(
+    135deg,
+    #1f4037,
+    #99f2c8
+  );
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  color: #0b1f17;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.predict-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
 }
 
 /* ========== RESPONSIVE ========== */
 @media (max-width: 768px) {
   h2 {
     font-size: 2rem;
-    margin-bottom: 2rem !important;
   }
-  .container {
-    padding: 1rem;
-  }
-  .form-card, .result-box {
-    padding: 1.5rem !important;
+  .form-card,
+  .result-box {
+    padding: 1.5rem;
   }
 }
